@@ -1,0 +1,17 @@
+<h1>Search page</h1>
+  <% if (@articles.empty?) %>
+    <h3>No data found!</h3>
+  <% else %>
+<ol>
+<% @articles.each do |article| %>
+    <li>
+    	<%= article.fname %>
+    	<%= article.lname %>  &nbsp; ---------------- &nbsp;
+        <%= link_to "Check details", article %>
+    </li>
+<% end %>
+</ol>
+<% end %>
+Total search: <%= @articles.count %>
+<br><br>
+<%= link_to "back", root_path %>
